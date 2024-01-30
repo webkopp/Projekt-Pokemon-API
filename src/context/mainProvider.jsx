@@ -32,12 +32,16 @@ const MainProvider = ({ children }) => {
   })
 
   const [apiData, setApiData] = useState({
-    offset: '',
-    limit: '',
+    offset: '0',
+    limit: '1302',
+    initData: false,
+    spData: false,
+    completedData: false,
+    backUp: {}
   })
 
   const [api, setApi] = useState({
-    apiGeneral: 'https://pokeapi.co/api/v2/pokemon/',
+    apiGeneral: `https://pokeapi.co/api/v2/pokemon/?offset=${apiData.offset}&limit=${apiData.limit}`,
     apiCustom: '',
     apiEvoChain: 'https://pokeapi.co/api/v2/evolution-chain/',
     apiColor: 'https://pokeapi.co/api/v2/pokemon-color/',
@@ -54,36 +58,93 @@ const MainProvider = ({ children }) => {
   useEffect(() => {
     const apiFetch = async () => {
       const resp = await axios.get(api.apiGeneral)
-      // console.log(resp.data.results);
-      setType(resp.data.results)
-      // resp.data.results.forEach((element) => {
-      //   return (
-      //     setType((prevState) => ({
-      //       ...prevState,
-      //       name: element.name,
-      //       url: element.url
-      //     })))
-      // })
-
+      const data = resp.data.results
+      
+      const newObject = data.map((item) => ({
+        name: item.name,
+        url: item.url
+      }))
+      setType(newObject)
     }
     apiFetch()
+    setApiData((prevState) => ({
+      ...prevState,
+      initData: true
+    }))
   }, [])
+  
 
   // * Loading Specific Data about single Pokemon from API
-  // useEffect(() => {
-  //   const apiFetch = async () => {
-  //     const resp = await axios.get(api.apiCustom)
-  //     console.log(resp);
-  //   }
-  //   api.apiCustom ? apiFetch() : null
-  // },[api.apiCustom])
+  useEffect(() => {
+    const apiFetch = async () => {
+      if (type.length > 0) {
+        const newData = await Promise.all(type.map(async (item) => {
+          const data = await getAPI(item.url)
+          console.log(data);
+          return {
+            ...item,
+            abilities: data.abilities,
+            base_experience: data.base_experience,
+            forms: data.forms,
+            game_indices: data.game_indices,
+            height: data.height,
+            held_items: data.held_items,
+            id: data.id,
+            is_default: data.id,
+            location_area_encounters: data.location_area_encounters,
+            moves: data.moves,
+            order: data.order,
+            past_abilities: data.past_abilities,
+            past_types: data.past_types,
+            species: data.species,
+            sprites: data.sprites,
+            stats: data.stats,
+            types: data.types,
+            weight: data.weight
+          };
+        }));
+        console.log('newData: ', newData);
+        setApiData((prevState) => ({
+          ...prevState,
+          spData: true,
+          backUp: newData
+        }))
+      }
+    };
+    apiFetch()
+    apiData.spData === true ? console.log(apiData.backUp) : null;
+    // setApiData((prevState) => ({
+    //   ...prevState,
+    //   backUp: newData
+    //   spData: true
+    // }))
+  }, [apiData.initData, type])
 
-  // type ? console.log('type:', type) : null;
+  async function getAPI(url) {
+    const apiFetch = async () => {
+      const resp = await axios.get(url)
+      return resp.data
+    }
+    const returnData = await apiFetch()
+    return returnData
+  }
+
+  // Daten an type übergeben
+
+  useEffect(() => {
+    if (apiData.spData === true) {
+      setType(apiData.backUp)
+      setApiData((prevState) => ({
+        ...prevState,
+        completedData: true
+      }))
+    }
+  }, [apiData.spData])
 
   return (
     <>
       <mainContext.Provider
-        value={{ state, setState, type, setType, api, setApi }}
+        value={{ state, setState, type, setType, api, setApi, apiData }}
       >{children}</mainContext.Provider>
     </>
   )

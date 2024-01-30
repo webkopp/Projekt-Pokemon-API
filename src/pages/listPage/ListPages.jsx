@@ -4,10 +4,14 @@ import { mainContext } from '../../context/mainProvider'
 
 const ListPages = () => {
 
-    const {type} = useContext(mainContext)
+    const { type, apiData } = useContext(mainContext)
 
     return (
-        <PokeList list={type}/>
+        <>
+            {
+                apiData.completedData === true ? <PokeList list={type} /> : null
+            }
+        </>
     )
 }
 
