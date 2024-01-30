@@ -36,6 +36,7 @@ const MainProvider = ({ children }) => {
 
   const [api, setApi] = useState({
     apiGeneral: 'https://pokeapi.co/api/v2/pokemon/',
+    apiCustom: '',
     apiEvoChain: 'https://pokeapi.co/api/v2/evolution-chain/',
     apiColor: 'https://pokeapi.co/api/v2/pokemon-color/',
     apiForm: 'https://pokeapi.co/api/v2/pokemon-form/1/',
@@ -45,23 +46,9 @@ const MainProvider = ({ children }) => {
     apiPrevious: '',
   })
 
-  // Deklaration aller useEffect Anweisungen
+  // * Deklaration aller useEffect Anweisungen
 
-  /* 
-  useEffect(() => {
-        const apiFetch = async () => {
-            // console.log(state.api);
-            const resp = await axios.get(state.apiDetail)
-            setState((prevState) => ({
-                ...prevState,
-                detailData: resp.data.drinks
-            }))
-        }
-        state.apiDetail ? (apiFetch()) : (null)
-
-    }, [state.apiDetail])
-  */
-
+  // Loading General Data
   useEffect(() => {
     const apiFetch = async () => {
       const resp = await axios.get(api.apiGeneral)
@@ -79,6 +66,15 @@ const MainProvider = ({ children }) => {
     }
     apiFetch()
   }, [])
+
+  // * Loading Specific Data about single Pokemon from API
+  useEffect(() => {
+    const apiFetch = async () => {
+      const resp = await axios.get(api.apiCustom)
+      console.log(resp);
+    }
+    api.apiCustom ? apiFetch() : null
+  },[api.apiCustom])
 
   type ? console.log('type:', type) : null;
 
