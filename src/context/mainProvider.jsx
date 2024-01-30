@@ -12,6 +12,7 @@ const MainProvider = ({ children }) => {
     pokemonID: '',
     pokemonURL: '',
     color: [],
+    formLink: '',
     hp: '',
     attack: '',
     defense: '',
@@ -20,6 +21,7 @@ const MainProvider = ({ children }) => {
     speed: '',
     accuracy: '',
     evasion: '',
+    weight: ''
   })
 
   const [type, setType] = useState([])
@@ -68,15 +70,15 @@ const MainProvider = ({ children }) => {
   }, [])
 
   // * Loading Specific Data about single Pokemon from API
-  useEffect(() => {
-    const apiFetch = async () => {
-      const resp = await axios.get(api.apiCustom)
-      console.log(resp);
-    }
-    api.apiCustom ? apiFetch() : null
-  },[api.apiCustom])
+  // useEffect(() => {
+  //   const apiFetch = async () => {
+  //     const resp = await axios.get(api.apiCustom)
+  //     console.log(resp);
+  //   }
+  //   api.apiCustom ? apiFetch() : null
+  // },[api.apiCustom])
 
-  type ? console.log('type:', type) : null;
+  // type ? console.log('type:', type) : null;
 
   return (
     <>
