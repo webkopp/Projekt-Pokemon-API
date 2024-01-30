@@ -6,14 +6,14 @@ nav {
 }
 
 .search {
-    width: 25%;
+    width: 30%;
 }
 
 input {
     width: 100%;
     padding: 0.5em;
     border-radius: 5px;
-    border: 1px solid #green;
+    border: 1px solid green;
     font-size: 1em;
     outline: none;
 }
