@@ -73,7 +73,7 @@ const MainProvider = ({ children }) => {
       const resp = await axios.get(api.apiCustom)
       console.log(resp);
     }
-    api.apiCustom ? apiFetch : null
+    api.apiCustom ? apiFetch() : null
   },[api.apiCustom])
 
   type ? console.log('type:', type) : null;
