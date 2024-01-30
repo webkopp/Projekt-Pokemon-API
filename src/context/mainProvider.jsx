@@ -3,13 +3,14 @@ import React, { createContext, useEffect, useState } from 'react'
 
 export const mainContext = createContext();
 
-const MainProvider = ({children}) => {
-  
+const MainProvider = ({ children }) => {
+
   // Deklaration aller useState Anweisungen
 
   const [state, setState] = useState({
     pokemon: '',
     pokemonID: '',
+    pokemonURL: '',
     color: [],
     hp: '',
     attack: '',
@@ -28,13 +29,20 @@ const MainProvider = ({children}) => {
     evo2: '',
   })
 
+  const [apiData, setApiData] = useState({
+    offset: '',
+    limit: '',
+  })
+
   const [api, setApi] = useState({
-    apiGeneral: 'https://https://pokeapi.co/api/v2/pokemon/',
+    apiGeneral: 'https://pokeapi.co/api/v2/pokemon/',
     apiEvoChain: 'https://pokeapi.co/api/v2/evolution-chain/',
     apiColor: 'https://pokeapi.co/api/v2/pokemon-color/',
     apiForm: 'https://pokeapi.co/api/v2/pokemon-form/1/',
     apiTypes: 'https://pokeapi.co/api/v2/type/',
-    apiMoves: 'https://pokeapi.co/api/v2/move/'
+    apiMoves: 'https://pokeapi.co/api/v2/move/',
+    apiNext: '',
+    apiPrevious: '',
   })
 
   // Deklaration aller useEffect Anweisungen
@@ -57,16 +65,28 @@ const MainProvider = ({children}) => {
   useEffect(() => {
     const apiFetch = async () => {
       const resp = await axios.get(api.apiGeneral)
-      console.log(resp);
+      // console.log(resp.data.results);
+      setType(resp.data.results)
+      // resp.data.results.forEach((element) => {
+      //   return (
+      //     setType((prevState) => ({
+      //       ...prevState,
+      //       name: element.name,
+      //       url: element.url
+      //     })))
+      // })
+
     }
-    api.apiGeneral ? (apiFetch()) : (null)
+    apiFetch()
   }, [])
+
+  type ? console.log('type:', type) : null;
 
   return (
     <>
-    <mainContext.Provider
-    value ={{state, setState, type, setType, api, setApi}}
-    >{children}</mainContext.Provider>
+      <mainContext.Provider
+        value={{ state, setState, type, setType, api, setApi }}
+      >{children}</mainContext.Provider>
     </>
   )
 }
