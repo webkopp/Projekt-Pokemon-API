@@ -24,12 +24,15 @@ const MainProvider = ({ children }) => {
     weight: ''
   })
 
+  // Array mit allen Pokemon die dargestellt werden sollen
   const [type, setType] = useState([])
 
   const [evo, setEvo] = useState({
     evo1: '',
     evo2: '',
   })
+
+  const [filter, setFilter] = useState([])
 
   const [apiData, setApiData] = useState({
     offset: '0',
@@ -80,7 +83,7 @@ const MainProvider = ({ children }) => {
       if (type.length > 0) {
         const newData = await Promise.all(type.map(async (item) => {
           const data = await getAPI(item.url)
-          console.log(data);
+          // console.log(data);
           return {
             ...item,
             abilities: data.abilities,
@@ -103,7 +106,7 @@ const MainProvider = ({ children }) => {
             weight: data.weight
           };
         }));
-        console.log('newData: ', newData);
+        // console.log('newData: ', newData);
         setApiData((prevState) => ({
           ...prevState,
           spData: true,
@@ -112,7 +115,7 @@ const MainProvider = ({ children }) => {
       }
     };
     apiFetch()
-    apiData.spData === true ? console.log(apiData.backUp) : null;
+    apiData.spData === true ? console.log('BackUp: ',apiData.backUp) : null;
     // setApiData((prevState) => ({
     //   ...prevState,
     //   backUp: newData
@@ -144,7 +147,7 @@ const MainProvider = ({ children }) => {
   return (
     <>
       <mainContext.Provider
-        value={{ state, setState, type, setType, api, setApi, apiData }}
+        value={{ state, setState, type, setType, api, setApi, apiData, filter, setFilter }}
       >{children}</mainContext.Provider>
     </>
   )

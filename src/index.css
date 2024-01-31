@@ -9,4 +9,5 @@
 
   --padding-global: 1rem;
   --cardWidth: calc((100vw - 2 * var(--padding-global)) / 4)
+  --screen-width: 1920px
 }
