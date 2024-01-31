@@ -2,6 +2,7 @@ import React, { useContext, useEffect } from 'react'
 import PokeList from '../../components/pokeList/PokeList'
 import { mainContext } from '../../context/mainProvider'
 import BurgerMeneu from '../../components/burgermeneu/BurgerMeneu'
+import Header from '../../components/header/Header'
 
 const ListPages = () => {
 
