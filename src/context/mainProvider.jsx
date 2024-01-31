@@ -3,9 +3,11 @@ import React, { createContext, useEffect, useState } from 'react'
 
 export const mainContext = createContext();
 
+
 const MainProvider = ({ children }) => {
 
   // Deklaration aller useState Anweisungen
+  const [darkmode, setDarkmode] = useState(true)
 
   const [state, setState] = useState({
     pokemon: '',
@@ -151,6 +153,10 @@ const MainProvider = ({ children }) => {
       >{children}</mainContext.Provider>
     </>
   )
+}
+
+const toggleMode = () => {
+    setDarkmode(!darkmode)
 }
 
 export default MainProvider
