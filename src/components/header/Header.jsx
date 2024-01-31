@@ -3,21 +3,26 @@ import { mainContext } from '../../context/mainProvider'
 import { Link } from 'react-router-dom'
 import "./header.css"
 import logo from "../../assets/img/image 1.png";
+import darki from "../../assets/img/mode.png";
 
 
-const Header = () => {
-    const { setSearchTerm } = useContext(mainContext)
+
+const Header = ( ) => {
+    const { setSearchTerm, darkMode, setDarkMode } = useContext(mainContext)
     const searchRef = useRef()
-    const [darkmode, setDarkmode] = useState(true)
     const toggleMode = () => {
-        setDarkmode(!darkmode)
-    {darkmode ? document.documentElement.setAttribute('light', 'dark') : document.documentElement.setAttribute('dark', 'light')}
-}
+      setDarkMode(!darkMode)
+  }
+   
 
 
   return (
 
     <>
+
+          <body style={{ backgroundColor }}>
+                <button onClick={toggleMode}>{darki}</button>
+          </body>
         <Link to="/">
             <img
               src={logo}

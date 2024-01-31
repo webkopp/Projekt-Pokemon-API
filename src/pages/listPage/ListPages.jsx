@@ -6,32 +6,36 @@ import Header from '../../components/header/Header'
 
 const ListPages = () => {
 
-    const { type, apiData, filter } = useContext(mainContext)
+    const { type, apiData, filter, setType, backUp} = useContext(mainContext)
+
+    backUp ? console.log(backUp) : null
 
     useEffect(() => {
         if (apiData.completedData == true && filter) {
-            console.log(filter);
-            const filterArr = apiData.backUp?.filter((item) => {
+            // console.log(filter);
+            // console.log('BackUpData in FilterFunktion: ', apiData.backUp);
+            const filterArr = backUp?.filter((item) => {
+                let saveVar = ''
                 item.types.forEach(element => {
                     // console.log(element);
                     if (element.type.name === filter) {
-                        return item
-                    } else {
-                        null
+                        saveVar = item
                     }
                 })
+                return saveVar
             })
-            console.log("filter", filterArr);
+            // console.log(filterArr);
+            setType(filterArr)
         }
     }, [filter])
-
+    // type ? console.log(type) : null
     return (
         <>
             <Header />
             <BurgerMeneu/>
 
             {
-                apiData.completedData === true ? <PokeList list={type} /> : <p>Loading ...</p>
+                (apiData.completedData === true && type) ? <PokeList list={type} /> : <p>Loading ...</p>
             }
         </>
     )
