@@ -6,12 +6,15 @@ import Header from '../../components/header/Header'
 
 const ListPages = () => {
 
-    const { type, apiData, filter, setType } = useContext(mainContext)
+    const { type, apiData, filter, setType, backUp} = useContext(mainContext)
+
+    backUp ? console.log(backUp) : null
 
     useEffect(() => {
         if (apiData.completedData == true && filter) {
-            console.log(filter);
-            const filterArr = apiData.backUp?.filter((item) => {
+            // console.log(filter);
+            // console.log('BackUpData in FilterFunktion: ', apiData.backUp);
+            const filterArr = backUp?.filter((item) => {
                 let saveVar = ''
                 item.types.forEach(element => {
                     // console.log(element);
@@ -21,11 +24,11 @@ const ListPages = () => {
                 })
                 return saveVar
             })
-            console.log(filterArr);
+            // console.log(filterArr);
             setType(filterArr)
         }
     }, [filter])
-
+    // type ? console.log(type) : null
     return (
         <>
             <Header />

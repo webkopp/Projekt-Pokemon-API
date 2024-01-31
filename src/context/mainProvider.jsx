@@ -26,6 +26,7 @@ const MainProvider = ({ children }) => {
 
   // Array mit allen Pokemon die dargestellt werden sollen
   const [type, setType] = useState([])
+  const [backUp, setBackUp] = useState([])
 
   const [evo, setEvo] = useState({
     evo1: '',
@@ -36,7 +37,7 @@ const MainProvider = ({ children }) => {
 
   const [apiData, setApiData] = useState({
     offset: '0',
-    limit: '100',
+    limit: '450',
     initData: false,
     spData: false,
     completedData: false,
@@ -144,10 +145,14 @@ const MainProvider = ({ children }) => {
     }
   }, [apiData.spData])
 
+  useEffect(() => {
+    setBackUp(apiData.backUp)
+  }, [apiData.completedData])
+
   return (
     <>
       <mainContext.Provider
-        value={{ state, setState, type, setType, api, setApi, apiData, filter, setFilter }}
+        value={{ state, setState, type, setType, api, setApi, apiData, filter, setFilter, backUp, setBackUp }}
       >{children}</mainContext.Provider>
     </>
   )

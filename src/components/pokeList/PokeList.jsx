@@ -6,6 +6,7 @@ const PokeList = ({ list }) => {
     // console.log('List', list);
     return (
         <>
+        {/* {console.log('List: ', list)} */}
         <section className='scBodyList'>
             {
                 list.map((element, index) => {
