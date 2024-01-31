@@ -1,0 +1,27 @@
+.scBodyList {
+    width: var(--screen-width);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 0rem var(--padding-global)
+}
+
+.divPokeCard {
+    min-width: 200px;
+    width: var(--cardWidth);
+    max-width: 360px;
+    padding: 0 var(--padding-global);
+}
+
+.divPokeCard img {
+    width: 100%;
+    max-width: 480px;
+}
+
+.divPokeCard div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: var(--padding-global);
+}

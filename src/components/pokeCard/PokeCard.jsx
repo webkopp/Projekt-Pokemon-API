@@ -3,26 +3,14 @@ import { mainContext } from '../../context/mainProvider'
 import axios from 'axios'
 
 const PokeCard = ({ pokemon }) => {
-    const { api, setApi } = useContext(mainContext)
-    // * hier setzen wir setApi => api.ApiCutom: pokemon.url
+    const { api, setApi, type, setType } = useContext(mainContext)
 
-    // const apiFetch = async () => {
-    //     const resp = await axios.get(pokemon.url)
-    //     console.log(resp.data);
-    // }
-    // apiFetch()
-
-    useEffect(() => {
-        setApi((prevState) => ({
-            ...prevState,
-            apiCustom: pokemon.url
-        }))
-    }, [])
-    api.apiCustom ? console.log(api.apiCustom) : null 
-    
     return (<>
-        <h1>{pokemon.name}</h1>
-        <p>{pokemon.url}</p>
+        <img src={pokemon.sprites.front_default} alt="" />
+        <div className='divPokeCardBottom'>
+            <p className='pPokemonName'>{pokemon.name}</p>
+            <p className='pPokemonID'>#{`${pokemon.id}`.padStart(4, '0')}</p>
+        </div>
     </>)
 }
 

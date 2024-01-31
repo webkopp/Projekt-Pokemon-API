@@ -1,0 +1,25 @@
+#root {
+    --color-back-light: #CCDADD;
+    --color-back-dark: 1C1C1C;
+    --padding-global: 1rem;
+  }
+
+nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2em;
+}
+
+.search {
+    width: 30%;
+}
+
+input {
+    width: 100%;
+    padding: 0.5em;
+    border-radius: 5px;
+    border: 1px solid green;
+    font-size: 1em;
+    outline: none;
+}
