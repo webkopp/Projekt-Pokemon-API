@@ -21,7 +21,7 @@ const ListPages = () => {
                     }
                 })
             })
-            console.log(filterArr);
+            console.log("filter", filterArr);
         }
     }, [filter])
 
