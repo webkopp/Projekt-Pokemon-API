@@ -6,22 +6,23 @@ import Header from '../../components/header/Header'
 
 const ListPages = () => {
 
-    const { type, apiData, filter } = useContext(mainContext)
+    const { type, apiData, filter, setType } = useContext(mainContext)
 
     useEffect(() => {
         if (apiData.completedData == true && filter) {
             console.log(filter);
             const filterArr = apiData.backUp?.filter((item) => {
+                let saveVar = ''
                 item.types.forEach(element => {
                     // console.log(element);
                     if (element.type.name === filter) {
-                        return item
-                    } else {
-                        null
+                        saveVar = item
                     }
                 })
+                return saveVar
             })
             console.log(filterArr);
+            setType(filterArr)
         }
     }, [filter])
 
@@ -31,7 +32,7 @@ const ListPages = () => {
             <BurgerMeneu/>
 
             {
-                apiData.completedData === true ? <PokeList list={type} /> : <p>Loading ...</p>
+                (apiData.completedData === true && type) ? <PokeList list={type} /> : <p>Loading ...</p>
             }
         </>
     )
