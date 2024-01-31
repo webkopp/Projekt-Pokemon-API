@@ -9,7 +9,8 @@ const ListPages = () => {
     const { type, apiData, filter } = useContext(mainContext)
 
     useEffect(() => {
-        if (apiData.completedData == true) {
+        if (apiData.completedData == true && filter) {
+            console.log(filter);
             const filterArr = apiData.backUp?.filter((item) => {
                 item.types.forEach(element => {
                     // console.log(element);
@@ -20,14 +21,14 @@ const ListPages = () => {
                     }
                 })
             })
-            // jetzt muss setType filterArr übergeben werden.
-            // filter ?  : null
+            console.log(filterArr);
         }
     }, [filter])
 
     return (
         <>
             <Header />
+            <BurgerMeneu/>
 
             {
                 apiData.completedData === true ? <PokeList list={type} /> : <p>Loading ...</p>
