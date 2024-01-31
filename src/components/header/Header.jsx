@@ -42,7 +42,7 @@ const Header = ( ) => {
               type="text"
               ref={searchRef}
               placeholder="Search Pokemon"
-              onChange={}
+              // onChange={} //
             />
           </div>
 
