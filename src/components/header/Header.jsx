@@ -8,10 +8,10 @@ import darki from "../../assets/img/mode.png";
 
 
 const Header = ( ) => {
-    const { setSearchTerm } = useContext(mainContext)
+    const { setSearchTerm, darkMode, setDarkMode } = useContext(mainContext)
     const searchRef = useRef()
     const toggleMode = () => {
-      setDarkmode(!darkmode)
+      setDarkMode(!darkMode)
   }
    
 

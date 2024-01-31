@@ -7,7 +7,7 @@ export const mainContext = createContext();
 const MainProvider = ({ children }) => {
 
   // Deklaration aller useState Anweisungen
-  const [darkmode, setDarkmode] = useState(true)
+  const [darkMode, setDarkMode] = useState(false)
 
   const [state, setState] = useState({
     pokemon: '',
@@ -154,14 +154,10 @@ const MainProvider = ({ children }) => {
   return (
     <>
       <mainContext.Provider
-        value={{ state, setState, type, setType, api, setApi, apiData, filter, setFilter, backUp, setBackUp }}
+        value={{ state, setState, type, setType, api, setApi, apiData, filter, setFilter, backUp, setBackUp, darkMode, setDarkMode }}
       >{children}</mainContext.Provider>
     </>
   )
-}
-
-const toggleMode = () => {
-    setDarkmode(!darkmode)
 }
 
 export default MainProvider
