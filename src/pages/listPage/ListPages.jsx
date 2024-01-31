@@ -1,6 +1,7 @@
 import React, { useContext, useEffect } from 'react'
 import PokeList from '../../components/pokeList/PokeList'
 import { mainContext } from '../../context/mainProvider'
+import Header from '../../components/header/Header'
 
 const ListPages = () => {
 
@@ -21,6 +22,8 @@ const ListPages = () => {
 
     return (
         <>
+        <Header />
+
             {
                 apiData.completedData === true ? <PokeList list={type} /> : <p>Loading ...</p>
             }
