@@ -9,6 +9,7 @@ const ListPages = () => {
     useEffect(() => {
         const filterArr = type.filter((item) => {
             item.types.forEach(element => {
+                // console.log(element);
                 if(element.type.name === filter) {
                     return item
                 } else {
