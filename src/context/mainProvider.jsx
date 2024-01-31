@@ -40,7 +40,7 @@ const MainProvider = ({ children }) => {
     initData: false,
     spData: false,
     completedData: false,
-    backUp: {}
+    backUp: []
   })
 
   const [api, setApi] = useState({
