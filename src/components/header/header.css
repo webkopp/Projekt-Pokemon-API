@@ -1,3 +1,9 @@
+#root {
+    --color-back-light: #CCDADD;
+    --color-back-dark: 1C1C1C;
+    --padding-global: 1rem;
+  }
+
 nav {
     display: flex;
     flex-direction: column;
