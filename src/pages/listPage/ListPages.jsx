@@ -1,7 +1,7 @@
 import React, { useContext, useEffect } from 'react'
 import PokeList from '../../components/pokeList/PokeList'
 import { mainContext } from '../../context/mainProvider'
-import Header from '../../components/header/Header'
+import BurgerMeneu from '../../components/burgermeneu/BurgerMeneu'
 
 const ListPages = () => {
 
