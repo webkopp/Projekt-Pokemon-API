@@ -20,7 +20,7 @@ const Header = ( ) => {
 
     <>
 
-          <body style={{ backgroundColor }}>
+          <body >
                 <button onClick={toggleMode}>{darki}</button>
           </body>
         <Link to="/">
