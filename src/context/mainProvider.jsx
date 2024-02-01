@@ -152,6 +152,14 @@ const MainProvider = ({ children }) => {
     setBackUp(apiData.backUp)
   }, [apiData.completedData])
 
+
+
+  useEffect(()=>{
+    setBackUp(apiData.backUp)
+console.log(apiData.backUp);
+  }, [api.completedData])
+
+
   return (
     <>
       <mainContext.Provider

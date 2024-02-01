@@ -21,7 +21,6 @@ const Header = () => {
   const serachFunction = (event) => {
     setSearch(event.target.value)
     let searchPokemon = backUp.filter(pokemon => pokemon.name.toLowerCase().includes(event.target.value.toLowerCase()))
-    // setApi(api.apiCustom)
     setType(searchPokemon)
     
 
