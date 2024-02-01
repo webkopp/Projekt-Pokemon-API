@@ -36,10 +36,6 @@ toggleMode()
   return (
 
     <>
-
-          <body style={{}}>
-                <button onClick={toggleMode}>{darki}</button>
-          </body>
         <Link to="/">
             <img
               src={logo}
