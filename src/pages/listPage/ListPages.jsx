@@ -8,7 +8,7 @@ const ListPages = () => {
 
     const { type, apiData, filter, setType, backUp} = useContext(mainContext)
 
-    backUp ? console.log(backUp) : null
+    // backUp ? console.log(backUp) : null
 
     useEffect(() => {
         if (apiData.completedData == true && filter) {

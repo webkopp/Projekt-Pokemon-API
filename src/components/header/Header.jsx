@@ -1,4 +1,4 @@
-import { useContext, useRef, useState } from 'react'
+import { useContext, useEffect, useRef, useState } from 'react'
 import { mainContext } from '../../context/mainProvider'
 import { Link } from 'react-router-dom'
 import "./header.css"
@@ -12,11 +12,18 @@ import close from "../../assets/img/close.svg"
 const Header = ( ) => {
     const { setSearchTerm, darkMode, setDarkMode } = useContext(mainContext)
     const searchRef = useRef()
-    const toggleMode = () => {
-      setDarkMode(!darkMode)
-  }
+    
+  //   const toggleMode = () => {
+  //     setDarkMode(!darkMode)
+  //     console.log(darkMode)
+  // }
    
+useEffect(()=>
+{
+toggleMode()
 
+}, []
+) 
 
   return (
 
@@ -46,7 +53,7 @@ const Header = ( ) => {
             />
           </div>
 
-          <button id='modeToggle' onClick={toggleMode}>
+          <button id='modeToggle' onClick={() => setDarkMode(darkMode)}>
               <img 
                 src={darki}
                 alt="Dark-Icon"
