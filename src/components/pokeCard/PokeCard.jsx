@@ -8,8 +8,8 @@ const PokeCard = ({ pokemon }) => {
     return (<>
         <img src={pokemon.sprites.front_default} alt="" />
         <div className='divPokeCardBottom'>
-            <p className='pPokemonName'>{pokemon.name}</p>
             <p className='pPokemonID'>#{`${pokemon.id}`.padStart(4, '0')}</p>
+            <p className='pPokemonName'>{pokemon.name}</p>
         </div>
     </>)
 }

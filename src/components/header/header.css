@@ -1,38 +1,34 @@
-<<<<<<< HEAD
 #root {
     --color-back-light: #CCDADD;
-    --color-back-dark: 1C1C1C;
+    --color-back-dark: #1C1C1C;
     --padding-global: 1rem;
-=======
-:root {
-    --background-color: #CCDADD;
-}
-
-[data-theme="dark"] {
-    --background-color: #1C1C1C;
-}
-
-body {
-    background-color: var(--background-color);
->>>>>>> nancy
+    --gradient-mode-ligth: linear-gradient(-45deg, #FFCB05, #FFE1C6);
 }
 
 nav {
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
+    justify-items: stretch;
     align-items: center;
-    gap: 2em;
+    gap: 1rem;
 }
 
 .search {
     width: 30%;
 }
 
-input {
-    width: 100%;
-    padding: 0.5em;
+
+input[type="text"] {
+    width: max-content;
+    margin: 1rem 0;
+    padding: 1rem var(--padding-global);
     border-radius: 5px;
-    border: 1px solid green;
-    font-size: 1em;
+    font-size: 1rem;
     outline: none;
+    border: 1px solid transparent;
+    font-size: 1rem;
+    font-weight: 500;
+    font-family: inherit;
+    cursor: pointer;
+    transition: border-color 0.25s;
 }
