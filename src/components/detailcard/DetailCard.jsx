@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useRef } from 'react'
 import { mainContext } from '../../context/mainProvider';
 import { Chart, RadarController } from 'chart.js/auto';
 import { Chart as ReactChart } from 'react-chartjs-2';
+import './detailcard.css'
 
 const DetailCard = ({ name }) => {
 
@@ -9,12 +10,9 @@ const DetailCard = ({ name }) => {
   const pokemonFilter = type.filter((element) => element.name === name)
   const chartRef = useRef()
 
-  console.log(pokemonFilter);
-
   useEffect(() => {
-    pokemonFilter ? console.log(chartRef.current.value) : null
-    // if (chartRef.current.value && pokemonFilter[0]) {
-
+    if (pokemonFilter.length > 0) {
+      console.log(pokemonFilter);
       const radarData = {
         labels: [
           'hp',
@@ -27,12 +25,12 @@ const DetailCard = ({ name }) => {
         datasets: [{
           label: 'Pokemon Stats:',
           data: [
-            pokemonFilter[0]?.stats[0]?.base_stat,
-            pokemonFilter[0]?.stats[1]?.base_stat,
-            pokemonFilter[0]?.stats[2]?.base_stat,
-            pokemonFilter[0]?.stats[3]?.base_stat,
-            pokemonFilter[0]?.stats[4]?.base_stat,
-            pokemonFilter[0]?.stats[5]?.base_stat,
+            pokemonFilter[0]?.stats[0].base_stat,
+            pokemonFilter[0]?.stats[1].base_stat,
+            pokemonFilter[0]?.stats[2].base_stat,
+            pokemonFilter[0]?.stats[3].base_stat,
+            pokemonFilter[0]?.stats[4].base_stat,
+            pokemonFilter[0]?.stats[5].base_stat,
           ],
           fill: true,
           backgroundColor: 'rgba(255, 99, 132, 0.2)',
@@ -43,45 +41,55 @@ const DetailCard = ({ name }) => {
           pointHoverBorderColor: 'rgb(255, 99, 132)'
         }]
       }
-
       setChartData(radarData)
-    // }
+    }
   }, [pokemonFilter])
 
-  chartData ? console.log(chartData) : null
+  // chartData ? console.log(chartData) : null;
 
   return (
     <>
       {/* {<>pokemonFilter[0]? ( */}
-      <img src={pokemonFilter[0]?.sprites?.front_default} />
       <h1>{pokemonFilter[0]?.name}</h1>
+      <img className='imgDetail' src={pokemonFilter[0]?.sprites?.front_default} />
       <h3>Base Experience: {pokemonFilter[0]?.base_experience}</h3>
-      <div>{pokemonFilter[0]?.abilities?.map((element, index) => {
+
+      <div className='divAbility'>{pokemonFilter[0]?.abilities?.map((element, index) => {
         return (
           <>
-            <p key={index}>Ability {index}: {element.ability.name}</p>
+            <p key={index} className='pAbility'>Ability {index}: {element.ability.name}</p>
           </>
         )
 
       })}</div>
-      <div>{pokemonFilter[0]?.types?.map((element, index) => {
+      <div className='divTypes'>{pokemonFilter[0]?.types?.map((element, index) => {
         return (
           <>
-            <p key={index}>Type {index}: {element.type.name}</p>
+            <p className='pTypes' key={index}>Type {index}: {element.type.name}</p>
           </>
         )
 
       })}</div>
-      <div width='240px' height='240px'>
-        <ReactChart type='radar' data={chartData} options={{
-          element: {
-            line: {
-              borderWidth: 3
-            }
-          }
-        }}
-          ref={chartRef}></ReactChart>
-      </div>
+      {
+        chartData ? (
+          <div id='pokeChart'>
+            <ReactChart
+              type='radar'
+              data={chartData}
+              height="120px"
+              width="120px"
+              options={{
+                element: {
+                  line: {
+                    borderWidth: 2
+                  }
+                }
+              }}
+              ref={chartRef}></ReactChart>
+          </div>
+
+        ) : <p>loading ...</p>
+      }
       {/* ) : <p>loading ....</p></>} */}
     </>
   )
