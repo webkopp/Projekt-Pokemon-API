@@ -10,7 +10,7 @@ import close from "../../assets/img/close.svg"
 
 
 const Header = () => {
-    const { search, setSearch, darkMode, setDarkMode, backUp, setType } = useContext(mainContext)
+    const { search, setSearch, darkMode, setDarkMode, backUp, setType, setApi, api } = useContext(mainContext)
     
     
     const toggleMode = () => {
@@ -21,6 +21,7 @@ const Header = () => {
   const serachFunction = (event) => {
     setSearch(event.target.value)
     let searchPokemon = backUp.filter(pokemon => pokemon.name.toLowerCase().includes(event.target.value.toLowerCase()))
+    // setApi(api.apiCustom)
     setType(searchPokemon)
     
 

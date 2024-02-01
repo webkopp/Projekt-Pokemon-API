@@ -49,7 +49,7 @@ const MainProvider = ({ children }) => {
 
   const [api, setApi] = useState({
     apiGeneral: `https://pokeapi.co/api/v2/pokemon/?offset=${apiData.offset}&limit=${apiData.limit}`,
-    apiCustom: '',
+    apiCustom: 'https://pokeapi.co/api/v2/pokemon/?offset=0&limit=1300',
     apiEvoChain: 'https://pokeapi.co/api/v2/evolution-chain/',
     apiColor: 'https://pokeapi.co/api/v2/pokemon-color/',
     apiForm: 'https://pokeapi.co/api/v2/pokemon-form/1/',
