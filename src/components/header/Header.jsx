@@ -1,9 +1,11 @@
-import { useContext, useRef, useState } from 'react'
+import { useContext, useEffect, useRef, useState } from 'react'
 import { mainContext } from '../../context/mainProvider'
 import { Link } from 'react-router-dom'
 import "./header.css"
-import logo from "../../assets/img/image 1.png";
-import darki from "../../assets/img/mode.png";
+import logo from "../../assets/img/image 1.svg"
+import darki from "../../assets/img/mode.svg"
+import back from "../../assets/img/back.svg"
+import close from "../../assets/img/close.svg"
 
 
 
@@ -23,13 +25,19 @@ const Header = () => {
     
 
 }
+   
+useEffect(()=>
+{
+toggleMode()
 
+}, []
+) 
 
   return (
 
     <>
 
-          <body >
+          <body style={{}}>
                 <button onClick={toggleMode}>{darki}</button>
           </body>
         <Link to="/">
@@ -39,17 +47,31 @@ const Header = () => {
               style={{ width: "2rem"}}
             /> 
         </Link>
+
         <nav>
+          <Link to="#">
+              <img
+                src={back}
+                alt="Back-Icon"
+              /> 
+          </Link>
             
-            <div className="search">
+          <div className="search">
             <input
                 type="text"
                 placeholder='find your Pokémon'
                 value={search}
                 onInput={serachFunction}
             />
-            </div>
-            <button id='modeToggle' onClick={() => toggleMode()}>🌓</button>
+          </div>
+
+          <button id='modeToggle' onClick={() => setDarkMode(darkMode)}>
+              <img 
+                src={darki}
+                alt="Dark-Icon"
+              />
+          </button>
+
         </nav>
         
         

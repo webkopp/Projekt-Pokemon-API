@@ -119,7 +119,7 @@ const MainProvider = ({ children }) => {
       }
     };
     apiFetch()
-    apiData.spData === true ? console.log('BackUp: ',apiData.backUp) : null;
+    // apiData.spData === true ? console.log('BackUp: ',apiData.backUp) : null;
     // setApiData((prevState) => ({
     //   ...prevState,
     //   backUp: newData
