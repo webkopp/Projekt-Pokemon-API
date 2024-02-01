@@ -8,11 +8,14 @@
 }
 
 #root {
-    max-width: 375px;
     margin: 0 auto;
     padding: 1rem;
     text-align: center;
     background-color: var(--color-back-light);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }
 
 * {
@@ -26,10 +29,8 @@ body {
 }
 
 .scBodyList {
-    width: 100%;
     background-color: aqua;
     display: flex;
-    flex-direction: column;
     justify-content: space-between;
     justify-items: center;
     align-items: center;
@@ -37,7 +38,7 @@ body {
 }
 
 .divPokeCard {
-    width: 150px;
+    width: 50px;
     height: 150px;
     background: linear-gradient(-45deg, #FFCB05, #FFE1C6);
     border-radius: 1rem;
@@ -49,28 +50,19 @@ body {
 }
 
 .divPokeCard div {
-    width: fit-content;
-    height: max-content;
+    /* max-width: fit-content; */
     display: flex;
     justify-content: center;
-    justify-content: space-between;
+    justify-content: space-around;
     padding: var(--padding-global);
     background-color: #fff;
 }
 
 .divPokeCardBottom {
     position: relative;
-    top: -70px;
+    top: -75px;
     border-end-end-radius: 1rem;
     border-end-start-radius: 1rem;
-    width: 150px;
-    height: 30px;
-    display: flex;
-    display: flex;
-    justify-content: space-between;
-    justify-items: stretch;
-    align-items: center;
-    gap: 1rem;
     background-color: #fff;
     font-family: "Roboto-Black";
     text-transform: capitalize;

@@ -14,13 +14,14 @@ function App() {
 
   return (
     <>
-    <section className={`${darkMode ? "dark" : "light"}`} >
+      <section className={`${darkMode ? "dark" : "light"}`} >
 
       <Routes>
         <Route path='/' element={<ListPages />}></Route>
         <Route path='/typsPage' element={<TypsPage/>}></Route>
         <Route path='/detailPage/:name' element={<DetailPage/>}></Route>
       </Routes>
+      
       </section>
     </>
   )
