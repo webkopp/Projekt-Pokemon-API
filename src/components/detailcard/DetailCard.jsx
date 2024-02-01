@@ -12,7 +12,7 @@ const DetailCard = ({ name }) => {
 
   useEffect(() => {
     if (pokemonFilter.length > 0) {
-      // console.log(pokemonFilter);
+      console.log(pokemonFilter);
       const radarData = {
         labels: [
           'hp',
@@ -65,7 +65,7 @@ const DetailCard = ({ name }) => {
       <div className='divTypes'>{pokemonFilter[0]?.types?.map((element, index) => {
         return (
           <>
-            <p className='pTypes' key={index} style={{backgroundColor: color[element.type.name]}}>Type {index}: {element.type.name}</p>
+            <p className='pTypes' key={index} style={{backgroundColor: color[element.type.name]}}>{element.type.name}</p>
           </>
         )
 
@@ -86,6 +86,7 @@ const DetailCard = ({ name }) => {
                 }
               }}
               ref={chartRef}></ReactChart>
+          
           </div>
 
         ) : <p>loading ...</p>
