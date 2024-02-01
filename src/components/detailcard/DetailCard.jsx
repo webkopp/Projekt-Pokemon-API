@@ -12,8 +12,8 @@ const DetailCard = ({ name }) => {
   console.log(pokemonFilter);
 
   useEffect(() => {
-    console.log(chartRef.current.value);
-    if (chartRef.current.value && pokemonFilter[0]) {
+    pokemonFilter ? console.log(chartRef.current.value) : null
+    // if (chartRef.current.value && pokemonFilter[0]) {
 
       const radarData = {
         labels: [
@@ -44,13 +44,11 @@ const DetailCard = ({ name }) => {
         }]
       }
 
-
-
       setChartData(radarData)
-    }
+    // }
   }, [pokemonFilter])
 
-  chartData ? console.log(chartData.data) : null
+  chartData ? console.log(chartData) : null
 
   return (
     <>
