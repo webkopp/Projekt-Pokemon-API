@@ -50,26 +50,28 @@ const DetailCard = ({ name }) => {
   return (
     <>
       {/* {<>pokemonFilter[0]? ( */}
-      <h1>{pokemonFilter[0]?.name}</h1>
-      <img className='imgDetail' src={pokemonFilter[0]?.sprites?.front_default} />
-      <h3>Base Experience: {pokemonFilter[0]?.base_experience}</h3>
-
-      <div className='divAbility'>{pokemonFilter[0]?.abilities?.map((element, index) => {
-        return (
-          <>
-            <p key={index} className='pAbility'>Ability {index}: {element.ability.name}</p>
-          </>
-        )
-
-      })}</div>
-      <div className='divTypes'>{pokemonFilter[0]?.types?.map((element, index) => {
-        return (
-          <>
-            <p className='pTypes' key={index} style={{backgroundColor: color[element.type.name]}}>{element.type.name}</p>
-          </>
-        )
-
-      })}</div>
+      <section className='detailTop'>
+        <h1>{pokemonFilter[0]?.name}</h1>
+        <img className='imgDetail' src={pokemonFilter[0]?.sprites?.front_default} />
+        <h3>Base Experience: {pokemonFilter[0]?.base_experience}</h3>
+  
+        <div className='divAbility'>{pokemonFilter[0]?.abilities?.map((element, index) => {
+          return (
+            <>
+              <p key={index} className='pAbility'>Ability {index}: {element.ability.name}</p>
+            </>
+          )
+  
+        })}</div>
+        <div className='divTypes'>{pokemonFilter[0]?.types?.map((element, index) => {
+          return (
+            <>
+              <p className='pTypes' key={index} style={{backgroundColor: color[element.type.name]}}>{element.type.name}</p>
+            </>
+          )
+  
+        })}</div>
+      </section>
       {
         chartData ? (
           <div id='pokeChart'>
