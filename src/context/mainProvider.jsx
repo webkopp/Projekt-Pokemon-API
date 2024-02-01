@@ -9,6 +9,8 @@ const MainProvider = ({ children }) => {
   // Deklaration aller useState Anweisungen
   const [darkMode, setDarkMode] = useState(false)
 
+  const [chartData, setChartData] = useState({})
+
   const [state, setState] = useState({
     pokemon: '',
     pokemonID: '',
@@ -154,7 +156,7 @@ const MainProvider = ({ children }) => {
   return (
     <>
       <mainContext.Provider
-        value={{ state, setState, type, setType, api, setApi, apiData, filter, setFilter, backUp, setBackUp, darkMode, setDarkMode }}
+        value={{ state, setState, type, setType, api, setApi, apiData, filter, setFilter, backUp, setBackUp, darkMode, setDarkMode, chartData, setChartData }}
       >{children}</mainContext.Provider>
     </>
   )
