@@ -6,13 +6,13 @@ import './detailcard.css'
 
 const DetailCard = ({ name }) => {
 
-  const { type, chartData, setChartData } = useContext(mainContext)
+  const { type, chartData, setChartData, color } = useContext(mainContext)
   const pokemonFilter = type.filter((element) => element.name === name)
   const chartRef = useRef()
 
   useEffect(() => {
     if (pokemonFilter.length > 0) {
-      console.log(pokemonFilter);
+      // console.log(pokemonFilter);
       const radarData = {
         labels: [
           'hp',
@@ -65,7 +65,7 @@ const DetailCard = ({ name }) => {
       <div className='divTypes'>{pokemonFilter[0]?.types?.map((element, index) => {
         return (
           <>
-            <p className='pTypes' key={index}>Type {index}: {element.type.name}</p>
+            <p className='pTypes' key={index} style={{backgroundColor: color[element.type.name]}}>Type {index}: {element.type.name}</p>
           </>
         )
 
