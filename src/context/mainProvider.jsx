@@ -4,11 +4,12 @@ import React, { createContext, useEffect, useState } from 'react'
 export const mainContext = createContext();
 
 
+
 const MainProvider = ({ children }) => {
 
   // Deklaration aller useState Anweisungen
   const [darkMode, setDarkMode] = useState(false)
-
+  const [search, setSearch] = useState()
   const [state, setState] = useState({
     pokemon: '',
     pokemonID: '',
@@ -154,7 +155,7 @@ const MainProvider = ({ children }) => {
   return (
     <>
       <mainContext.Provider
-        value={{ state, setState, type, setType, api, setApi, apiData, filter, setFilter, backUp, setBackUp, darkMode, setDarkMode }}
+        value={{ state, setState, type, setType, api, setApi, apiData, filter, setFilter, backUp, setBackUp, darkMode, setDarkMode, search, setSearch }}
       >{children}</mainContext.Provider>
     </>
   )

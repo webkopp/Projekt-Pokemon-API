@@ -29,6 +29,7 @@ const ListPages = () => {
         }
     }, [filter])
     // type ? console.log(type) : null
+
     return (
         <>
             <Header />

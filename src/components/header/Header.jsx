@@ -7,13 +7,22 @@ import darki from "../../assets/img/mode.png";
 
 
 
-const Header = ( ) => {
-    const { setSearchTerm, darkMode, setDarkMode } = useContext(mainContext)
-    const searchRef = useRef()
+const Header = () => {
+    const { search, setSearch, darkMode, setDarkMode, backUp, setType } = useContext(mainContext)
+    
+    
     const toggleMode = () => {
       setDarkMode(!darkMode)
   }
-   
+
+
+  const serachFunction = (event) => {
+    setSearch(event.target.value)
+    let searchPokemon = backUp.filter(pokemon => pokemon.name.toLowerCase().includes(event.target.value.toLowerCase()))
+    setType(searchPokemon)
+    
+
+}
 
 
   return (
@@ -27,7 +36,7 @@ const Header = ( ) => {
             <img
               src={logo}
               alt="Pokemon-Logo"
-              style={{ width: "2rem" }}
+              style={{ width: "2rem"}}
             /> 
         </Link>
         <nav>
@@ -35,12 +44,14 @@ const Header = ( ) => {
             <div className="search">
             <input
                 type="text"
-                ref={searchRef}
-                placeholder="Search Pokemon"
+                placeholder='find your Pokémon'
+                value={search}
+                onInput={serachFunction}
             />
             </div>
             <button id='modeToggle' onClick={() => toggleMode()}>🌓</button>
         </nav>
+        
         
 
 

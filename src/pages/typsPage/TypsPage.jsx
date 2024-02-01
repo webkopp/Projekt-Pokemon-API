@@ -2,7 +2,7 @@ import React, { useContext, useEffect } from 'react'
 import "../typsPage/typspage.css"
 import axios from 'axios'
 import { mainContext } from '../../context/mainProvider'
-import { Navigate, useNavigate } from 'react-router-dom'
+import { Link, Navigate, useNavigate } from 'react-router-dom'
 
 
 
@@ -21,8 +21,9 @@ const getValue = (event) => {
 }
 
   return (<>
+    <h1>Type</h1>
+    <Link to="/"></Link>
     <div className='typs'>
-    <h1>TypsPage</h1>
     <button onClick={getValue}>BUG</button>
     <button onClick={getValue}>DARK</button>
     <button onClick={getValue}>DRAGON</button>
