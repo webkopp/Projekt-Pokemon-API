@@ -29,9 +29,8 @@ body {
 }
 
 .scBodyList {
-    background-color: aqua;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     justify-items: center;
     align-items: center;
     gap: 1rem;

@@ -7,8 +7,8 @@
 
 nav {
     display: flex;
-    justify-content: space-between;
-    justify-items: stretch;
+    justify-content: center;
+    justify-items: center;
     align-items: center;
     gap: 1rem;
 }
@@ -19,7 +19,7 @@ nav {
 
 
 input[type="text"] {
-    width: max-content;
+    width: 100%;
     margin: 1rem 0;
     padding: 1rem var(--padding-global);
     border-radius: 5px;
@@ -29,6 +29,10 @@ input[type="text"] {
     font-size: 1rem;
     font-weight: 500;
     font-family: inherit;
-    cursor: pointer;
-    transition: border-color 0.25s;
+
+}
+
+#modeToggle {
+    border: none;
+    background-color: none;
 }

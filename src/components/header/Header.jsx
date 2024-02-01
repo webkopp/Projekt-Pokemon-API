@@ -40,7 +40,7 @@ toggleMode()
             <img
               src={logo}
               alt="Pokemon-Logo"
-              style={{ width: "70%"}}
+              style={{ width: "30%"}}
             /> 
         </Link>
 
