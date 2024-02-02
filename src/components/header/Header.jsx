@@ -11,7 +11,7 @@ import BurgerMeneu from '../burgermeneu/BurgerMeneu'
 
 
 const Header = () => {
-    const { search, setSearch, darkMode, setDarkMode, backUp, setType, setApi, api, toggleDarkmode } = useContext(mainContext)
+    const { search, setSearch, darkMode, setDarkMode, backUp, setType, setApi, api, toogleDarkmode } = useContext(mainContext)
 
 
 
@@ -48,7 +48,7 @@ const Header = () => {
                 onInput={serachFunction}
             />
           </div>
-              <img onClick={toggleDarkmode}
+              <img onClick={toogleDarkmode}
                 src={darki}
                 alt="Dark-Icon"/>
         </nav>

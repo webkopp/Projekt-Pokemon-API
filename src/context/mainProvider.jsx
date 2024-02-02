@@ -14,8 +14,8 @@ const MainProvider = ({ children }) => {
   const toogleDarkmode = () =>{
     setDarkMode((prev) =>!prev )
   }
+console.log(darkMode);
 
-  
   const [chartData, setChartData] = useState()
 
   const [search, setSearch] = useState()
