@@ -33,7 +33,9 @@ toggleMode()
 
 }, []
 ) 
-
+  const loadBackUpToType = () => {
+    setType(backUp);
+  }
   return (
 
     <>
@@ -42,6 +44,7 @@ toggleMode()
               src={logo}
               alt="Pokemon-Logo"
               style={{ width: "20rem"}}
+              onClick={loadBackUpToType}
             /> 
         </Link>
 
