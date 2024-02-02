@@ -1,6 +1,6 @@
 import { useContext, useEffect, useRef, useState } from 'react'
 import { mainContext } from '../../context/mainProvider'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import "./header.css"
 import logo from "../../assets/img/image 1.svg"
 import darki from "../../assets/img/mode.svg"
@@ -11,11 +11,10 @@ import BurgerMeneu from '../burgermeneu/BurgerMeneu'
 
 
 const Header = () => {
-    const { search, setSearch, darkMode, setDarkMode, backUp, setType, setApi, api } = useContext(mainContext)
-    
-    
-    const toggleMode = () => {
-      setDarkMode(!darkMode)
+  const { search, setSearch, darkMode, setDarkMode, backUp, setType, setFilter, filter } = useContext(mainContext)
+
+  const toggleMode = () => {
+    setDarkMode(!darkMode)
   }
 
 
@@ -23,53 +22,54 @@ const Header = () => {
     setSearch(event.target.value)
     let searchPokemon = backUp.filter(pokemon => pokemon.name.toLowerCase().includes(event.target.value.toLowerCase()))
     setType(searchPokemon)
-    
 
-}
-   
-useEffect(()=>
-{
-toggleMode()
 
-}, []
-) 
+  }
+
+  useEffect(() => {
+    toggleMode()
+
+  }, []
+  )
   const loadBackUpToType = () => {
-    setType(backUp);
+    setFilter('')
+    filter ? setType(backUp) : null
   }
   return (
 
     <>
-        <Link to="/">
-            <img className='logo'
-              src={logo}
-              alt="Pokemon-Logo"
-              style={{ width: "20rem"}}
-              onClick={loadBackUpToType}
-            /> 
-        </Link>
+      <Link to="/">
+        <img className='logo'
+          src={logo}
+          alt="Pokemon-Logo"
+          style={{ width: "20rem" }}
+          onClick={loadBackUpToType}
+        />
+      </Link>
 
-        <nav>
-         <BurgerMeneu/>
-            
-          <div className="search">
-            <input
-                type="text"
-                placeholder='find your Pokémon'
-                value={search}
-                onInput={serachFunction}
-            />
-          </div>
+      <nav>
+        <BurgerMeneu />
 
-          <button id='modeToggle' onClick={() => setDarkMode(darkMode)}>
-              <img 
-                src={darki}
-                alt="Dark-Icon"
-              />
-          </button>
+        <div className="search">
+          <input
+            type="text"
+            placeholder='find your Pokémon'
+            value={search}
+            onInput={serachFunction}
+            onClick={loadBackUpToType}
+          />
+        </div>
 
-        </nav>
-        
-        
+        <button id='modeToggle' onClick={() => setDarkMode(darkMode)}>
+          <img
+            src={darki}
+            alt="Dark-Icon"
+          />
+        </button>
+
+      </nav>
+
+
 
 
     </>
