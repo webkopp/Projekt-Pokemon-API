@@ -11,12 +11,8 @@ import BurgerMeneu from '../burgermeneu/BurgerMeneu'
 
 
 const Header = () => {
-    const { search, setSearch, darkMode, setDarkMode, backUp, setType, setApi, api } = useContext(mainContext)
-    
-    
-    const toggleMode = () => {
-      setDarkMode(!darkMode)
-  }
+    const { search, setSearch, darkMode, setDarkMode, backUp, setType, setApi, api, toggleDarkmode } = useContext(mainContext)
+
 
 
   const serachFunction = (event) => {
@@ -27,12 +23,8 @@ const Header = () => {
 
 }
    
-useEffect(()=>
-{
-toggleMode()
 
-}, []
-) 
+ 
 
   return (
 
@@ -56,14 +48,9 @@ toggleMode()
                 onInput={serachFunction}
             />
           </div>
-
-          <button id='modeToggle' onClick={() => setDarkMode(darkMode)}>
-              <img 
+              <img onClick={toggleDarkmode}
                 src={darki}
-                alt="Dark-Icon"
-              />
-          </button>
-
+                alt="Dark-Icon"/>
         </nav>
         
         

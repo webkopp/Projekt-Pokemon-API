@@ -10,7 +10,7 @@ import closeIcon from "../../assets/img/close.svg"
 
 
 const TypsPage = () => {
-    const {apiData, setFilter} = useContext(mainContext)
+    const {apiData, setFilter, darkMode, setDarkMode} = useContext(mainContext)
     const navigate = useNavigate()
 
 const getValue = (event) => {

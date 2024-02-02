@@ -10,6 +10,12 @@ const MainProvider = ({ children }) => {
   // Deklaration aller useState Anweisungen
   const [darkMode, setDarkMode] = useState(false)
 
+
+  const toogleDarkmode = () =>{
+    setDarkMode((prev) =>!prev )
+  }
+
+  
   const [chartData, setChartData] = useState()
 
   const [search, setSearch] = useState()
@@ -189,7 +195,7 @@ console.log(apiData.backUp);
   return (
     <>
       <mainContext.Provider
-        value={{ state, setState, type, setType, api, setApi, apiData, filter, setFilter, backUp, setBackUp, darkMode, setDarkMode, chartData, setChartData, color, setColor, search, setSearch }}
+        value={{ state, setState, type, setType, api, setApi, apiData, filter, setFilter, backUp, setBackUp, darkMode, setDarkMode, chartData, setChartData, color, setColor, search, setSearch, toogleDarkmode }}
       >{children}</mainContext.Provider>
     </>
   )
