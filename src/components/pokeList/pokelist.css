@@ -30,6 +30,7 @@
 }
 
 .divPokeCard div {
+
     /* display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -42,6 +43,7 @@
 }
 
 .divPokeCardBottom {
+
     position: relative;
     top: -73px;
     border-end-end-radius: 1rem;
