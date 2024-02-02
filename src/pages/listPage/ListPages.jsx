@@ -34,6 +34,7 @@ const ListPages = () => {
     return (
         <>
             <Header />
+            <BurgerMeneu/>
 
             {
                 (apiData.completedData === true && type) ? <PokeList list={type} /> : <p>Loading ...</p>

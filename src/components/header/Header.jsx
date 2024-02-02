@@ -4,13 +4,13 @@ import { Link } from 'react-router-dom'
 
 import "./header.css"
 import logo from "../../assets/img/image 1.svg"
+import menu from "../../assets/img/menu.svg"
 import darki from "../../assets/img/mode.svg"
 import back from "../../assets/img/back.svg"
-import BurgerMeneu from '../burgermeneu/BurgerMeneu'
 
 
 const Header = () => {
-    const { search, setSearch, darkMode, setDarkMode, backUp, setType, setApi, api } = useContext(mainContext)
+    const { search, setSearch, darkMode, setDarkMode, backUp, setType } = useContext(mainContext)
     
     
     const toggleMode = () => {
@@ -45,9 +45,12 @@ toggleMode()
         </Link>
 
         <nav>
-
-        <BurgerMeneu />
-
+          <Link to="/burgermeneu">
+              <img
+                src={menu}
+                alt="Menu-Icon"
+              /> 
+          </Link>
             
           <div className="search">
             <input

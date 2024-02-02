@@ -1,11 +1,9 @@
 .scBodyList {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    /* width: var(--screen-width);
+    width: var(--screen-width);
     display: flex;
     flex-direction: row;
     justify-content: center;
-    flex-wrap: wrap; */
+    flex-wrap: wrap;
     padding: 0rem var(--padding-global)
 }
 

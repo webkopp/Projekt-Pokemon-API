@@ -9,9 +9,6 @@ const MainProvider = ({ children }) => {
 
   // Deklaration aller useState Anweisungen
   const [darkMode, setDarkMode] = useState(false)
-
-  const [chartData, setChartData] = useState()
-
   const [search, setSearch] = useState()
   const [state, setState] = useState({
     pokemon: '',
@@ -50,32 +47,9 @@ const MainProvider = ({ children }) => {
     backUp: []
   })
 
-  const [color, setColor] = useState({
-    setColor: '',
-    bug: '#3BB900',
-    dark: '#1C1C1C',
-    dragon: '#00458A',
-    electric: '#FFE600',
-    fairy: '#FFC2F9',
-    fighting: '#E40000',
-    fire: '#FF9900',
-    flying: '#CCDADD',
-    ghost: '#5A1E64',
-    grass: '#57921C',
-    ground: '#965A00',
-    ice: '#6AD2FF',
-    normal: '#B3B3B3',
-    plant: '#70DF00',
-    poison: '#AB00AE',
-    psychic: '#FF81F2',
-    rock: '#E1B237',
-    steel: '#2A4950',
-    water: '#00A0E4'
-  })
-
   const [api, setApi] = useState({
     apiGeneral: `https://pokeapi.co/api/v2/pokemon/?offset=${apiData.offset}&limit=${apiData.limit}`,
-    apiCustom: 'https://pokeapi.co/api/v2/pokemon/?offset=0&limit=1300',
+    apiCustom: '',
     apiEvoChain: 'https://pokeapi.co/api/v2/evolution-chain/',
     apiColor: 'https://pokeapi.co/api/v2/pokemon-color/',
     apiForm: 'https://pokeapi.co/api/v2/pokemon-form/1/',
@@ -178,18 +152,10 @@ const MainProvider = ({ children }) => {
     setBackUp(apiData.backUp)
   }, [apiData.completedData])
 
-
-
-  useEffect(()=>{
-    setBackUp(apiData.backUp)
-console.log(apiData.backUp);
-  }, [api.completedData])
-
-
   return (
     <>
       <mainContext.Provider
-        value={{ state, setState, type, setType, api, setApi, apiData, filter, setFilter, backUp, setBackUp, darkMode, setDarkMode, chartData, setChartData, color, setColor, search, setSearch }}
+        value={{ state, setState, type, setType, api, setApi, apiData, filter, setFilter, backUp, setBackUp, darkMode, setDarkMode, search, setSearch }}
       >{children}</mainContext.Provider>
     </>
   )
