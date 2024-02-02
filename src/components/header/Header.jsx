@@ -22,7 +22,7 @@ const Header = () => {
   const navigate = useNavigate()
 
   const serachFunction = (event) => {
-    console.log(location);
+    
     if(location.pathname != '/') {
       navigate('/')
     }
