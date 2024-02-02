@@ -10,7 +10,7 @@ import BurgerMeneu from '../burgermeneu/BurgerMeneu'
 
 
 const Header = () => {
-    const { search, setSearch, darkMode, setDarkMode, backUp, setType } = useContext(mainContext)
+    const { search, setSearch, darkMode, setDarkMode, backUp, setType, setApi, api } = useContext(mainContext)
     
     
     const toggleMode = () => {

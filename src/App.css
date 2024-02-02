@@ -1,0 +1,14 @@
+body {
+  padding: 0 5rem;
+  background-color: lightblue;
+}
+
+@font-face {
+  font-family: "Roboto-R";
+  src: url("./assets/font/Roboto/Roboto-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Roboto-B";
+  src: url("./assets/font/Roboto/Roboto-Bold.ttf");
+}
