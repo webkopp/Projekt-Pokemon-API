@@ -1,53 +1,31 @@
 import { useContext, useEffect, useRef, useState } from 'react'
 import { mainContext } from '../../context/mainProvider'
 import { Link } from 'react-router-dom'
-
 import "./header.css"
 import logo from "../../assets/img/image 1.svg"
-import darki from "../../assets/img/mode.svg"
 import back from "../../assets/img/back.svg"
-import BurgerMeneu from '../burgermeneu/BurgerMeneu'
 
 
-const Header = () => {
-    const { search, setSearch, darkMode, setDarkMode, backUp, setType, setApi, api } = useContext(mainContext)
-    
-    
-    const toggleMode = () => {
-      setDarkMode(!darkMode)
-  }
 
-
-  const serachFunction = (event) => {
-    setSearch(event.target.value)
-    let searchPokemon = backUp.filter(pokemon => pokemon.name.toLowerCase().includes(event.target.value.toLowerCase()))
-    setType(searchPokemon)
-    
-
-}
-   
-useEffect(()=>
-{
-toggleMode()
-
-}, []
-) 
-
+const HeaderTwo = () => {
   return (
 
-    <>
+        <>
         <Link to="/">
             <img
               src={logo}
               alt="Pokemon-Logo"
-              style={{ width: "30%"}}
+              style={{ width: "70%"}}
             /> 
         </Link>
 
         <nav>
-
-        <BurgerMeneu />
-
+          <Link to="/Burgermeneu">
+              <img
+                src={back}
+                alt="Back-Icon"
+              /> 
+          </Link>
             
           <div className="search">
             <input
@@ -66,12 +44,9 @@ toggleMode()
           </button>
 
         </nav>
-        
-        
+        </>
 
-
-    </>
   )
 }
 
-export default Header
+export default HeaderTwo

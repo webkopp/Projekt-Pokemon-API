@@ -3,12 +3,13 @@ import PokeList from '../../components/pokeList/PokeList'
 import { mainContext } from '../../context/mainProvider'
 import BurgerMeneu from '../../components/burgermeneu/BurgerMeneu'
 import Header from '../../components/header/Header'
+import "./listPage.css"
 
 const ListPages = () => {
 
     const { type, apiData, filter, setType, backUp} = useContext(mainContext)
 
-    backUp ? console.log(backUp) : null
+    // backUp ? console.log(backUp) : null
 
     useEffect(() => {
         if (apiData.completedData == true && filter) {
@@ -29,10 +30,10 @@ const ListPages = () => {
         }
     }, [filter])
     // type ? console.log(type) : null
+
     return (
         <>
             <Header />
-            <BurgerMeneu/>
 
             {
                 (apiData.completedData === true && type) ? <PokeList list={type} /> : <p>Loading ...</p>

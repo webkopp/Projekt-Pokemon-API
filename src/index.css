@@ -5,20 +5,17 @@
 }
 
 #root {
-  --color-red: #FFFFFF;
-
   --padding-global: 1rem;
-  --cardWidth: calc((100vw - 2 * var(--padding-global)) / 4)
-  --screen-width: 1920px;
+  --cardWidth: calc((100vw - 2 * var(--padding-global)) / 4) --screen-width: 1920px;
   --color-back-light: #CCDADD;
---color-back-dark: #1C1C1C;
+  --color-back-dark: #1C1C1C;
 }
 
 
 .darkMode {
-  background-color: #CCDADD;
+  background-color: #1C1C1C;
 }
 
 .lightMode {
-  background-color: #1C1C1C;
+  background-color: #CCDADD;
 }
