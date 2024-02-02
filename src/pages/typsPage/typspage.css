@@ -30,7 +30,8 @@ h1 {
     font-family: "Roboto-B";
     color: #FFCB05;
     letter-spacing: 0.07rem;
-    text-shadow: -4px -4px 0 #2C72B8, 4px -4px 0 #2C72B8, -4px 4px 0 #2C72B8, 4px 4px 0 #2C72B8;
+    text-shadow: #2C72B8 0px 54px 55px, #2C72B8 0px -12px 30px, #2C72B8 0px 4px 6px, #2C72B8 0px 12px 13px, #2C72B8 0px -3px 5px;
+    ;
     font-weight: 900;
     padding-top: 5rem;
     padding-bottom: 2rem;
