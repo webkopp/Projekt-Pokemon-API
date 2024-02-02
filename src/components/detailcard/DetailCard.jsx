@@ -66,7 +66,9 @@ const DetailCard = ({ name }) => {
             </>
           )
   
-        })}</div>
+        })}
+        </div>
+        <h3 className='baseEXP'> TYPES:</h3>
         <div className='divTypes'>{pokemonFilter[0]?.types?.map((element, index) => {
           return (
             <>
