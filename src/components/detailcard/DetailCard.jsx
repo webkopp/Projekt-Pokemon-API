@@ -57,12 +57,12 @@ const DetailCard = ({ name }) => {
         <img className='imgDetail' src={pokemonFilter[0]?.sprites?.front_default} />
         </div>
         <h1>{pokemonFilter[0]?.name}</h1>
-        <h3>Base Experience: {pokemonFilter[0]?.base_experience}</h3>
-  
+        <h3 className='baseEXP'>Base Experience: {pokemonFilter[0]?.base_experience}</h3>
+        <h2 className='abilityTitle'>Abilitys:</h2>
         <div className='divAbility'>{pokemonFilter[0]?.abilities?.map((element, index) => {
           return (
             <>
-              <p key={index} className='pAbility'>Ability {index}: {element.ability.name}</p>
+              <p key={index} className='pAbility'> {element.ability.name}</p>
             </>
           )
   

@@ -31,6 +31,17 @@ h1 {
 
 }
 
+.baseEXP {
+    font-family: "Roboto-B";
+    color: #FFCB05;
+}
+
+.abilityTitle {
+    margin-top: 2rem;
+    color: #2C72B8;
+    font-family: "Roboto-B";
+}
+
 .divAbility,
 .divTypes {
     display: flex;
