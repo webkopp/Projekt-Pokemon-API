@@ -3,7 +3,7 @@ import { mainContext } from '../../context/mainProvider'
 import axios from 'axios'
 
 const PokeCard = ({ pokemon }) => {
-    const { api, setApi, type, setType } = useContext(mainContext)
+    const { api, setApi, type, setType} = useContext(mainContext)
 
     return (<>
         <img src={pokemon.sprites.front_default} alt="" />

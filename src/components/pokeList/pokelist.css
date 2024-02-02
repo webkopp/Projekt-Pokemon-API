@@ -1,9 +1,13 @@
 .scBodyList {
-    width: var(--screen-width);
+    margin-top: 3rem;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 3rem;
+    /* width: var(--screen-width);
     display: flex;
     flex-direction: row;
     justify-content: center;
-    flex-wrap: wrap;
+    flex-wrap: wrap; */
     padding: 0rem var(--padding-global)
 }
 
@@ -11,17 +15,40 @@
     min-width: 200px;
     width: var(--cardWidth);
     max-width: 360px;
+    background: linear-gradient(-45deg, #FFCB05, #FFE1C6);
     padding: 0 var(--padding-global);
+    width: 50px;
+    height: 150px;
+    border-radius: 1rem;
 }
 
 .divPokeCard img {
     width: 100%;
     max-width: 480px;
+    position: relative;
+    top: -60px;
 }
 
 .divPokeCard div {
-    display: flex;
+
+    /* display: flex;
     flex-direction: row;
     justify-content: space-between;
+    padding: var(--padding-global); */
+    display: flex;
+    justify-content: center;
+    justify-content: space-around;
     padding: var(--padding-global);
+    background-color: #fff;
+}
+
+.divPokeCardBottom {
+
+    position: relative;
+    top: -73px;
+    border-end-end-radius: 1rem;
+    border-end-start-radius: 1rem;
+    background-color: #fff;
+    font-family: "Roboto-Black";
+    text-transform: capitalize;
 }

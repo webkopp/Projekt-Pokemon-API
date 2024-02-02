@@ -1,0 +1,75 @@
+.detailTop {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+
+.detailCardDiv {
+    margin-top: 3rem;
+    background: linear-gradient(-45deg, #FFCB05, #FFE1C6);
+    border-radius: 20px;
+    height: 120px;
+    width: 300px;
+}
+
+.detailCardDiv img {
+    position: relative;
+    top: -80px;
+}
+
+h1 {
+    font-size: 5rem;
+}
+
+.imgDetail {
+    height: 240px;
+    width: 240px;
+
+}
+
+.baseEXP {
+    font-family: "Roboto-B";
+    color: #2C72B8;
+}
+
+.abilityTitle {
+    margin-top: 2rem;
+    color: #2C72B8;
+    font-family: "Roboto-B";
+}
+
+.divAbility,
+.divTypes {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    padding: 1rem;
+}
+
+.pAbility,
+.pTypes {
+    /* box-shadow: inset 0 0 16px black;
+    padding: 1rem 2rem;
+    border-radius: 1rem; */
+    border: 1px solid black;
+    border-radius: 10px;
+    color: white;
+    padding: 10px;
+    width: 20vw;
+    text-transform: uppercase;
+    font-family: "Roboto-B";
+
+}
+
+
+
+#pokechart {
+    height: 120px;
+    width: 120px;
+}
