@@ -43,7 +43,7 @@ const DetailCard = ({ name }) => {
       }
       setChartData(radarData)
     }
-  }, [pokemonFilter])
+  }, [])
 
   // chartData ? console.log(chartData) : null;
 
