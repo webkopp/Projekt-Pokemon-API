@@ -1,6 +1,6 @@
 import { useContext, useEffect, useRef, useState } from 'react'
 import { mainContext } from '../../context/mainProvider'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 import "./header.css"
 import logo from "../../assets/img/image 1.svg"
 import darki from "../../assets/img/mode.svg"
@@ -17,8 +17,16 @@ const Header = () => {
     setDarkMode(!darkMode)
   }
 
+  const location = useLocation()
+
+  const navigate = useNavigate()
 
   const serachFunction = (event) => {
+    console.log(location);
+    if(location.pathname != '/') {
+      navigate('/')
+    }
+    setFilter('')
     setSearch(event.target.value)
     let searchPokemon = backUp.filter(pokemon => pokemon.name.toLowerCase().includes(event.target.value.toLowerCase()))
     setType(searchPokemon)
@@ -56,7 +64,6 @@ const Header = () => {
             placeholder='find your Pokémon'
             value={search}
             onInput={serachFunction}
-            onClick={loadBackUpToType}
           />
         </div>
 
