@@ -3,6 +3,7 @@ import { mainContext } from '../../context/mainProvider';
 import { Chart, RadarController } from 'chart.js/auto';
 import { Chart as ReactChart } from 'react-chartjs-2';
 import './detailcard.css'
+import Header from '../header/Header';
 
 const DetailCard = ({ name }) => {
 
@@ -50,9 +51,12 @@ const DetailCard = ({ name }) => {
   return (
     <>
       {/* {<>pokemonFilter[0]? ( */}
+      <Header/>
       <section className='detailTop'>
-        <h1>{pokemonFilter[0]?.name}</h1>
+        <div className='detailCardDiv'>
         <img className='imgDetail' src={pokemonFilter[0]?.sprites?.front_default} />
+        </div>
+        <h1>{pokemonFilter[0]?.name}</h1>
         <h3>Base Experience: {pokemonFilter[0]?.base_experience}</h3>
   
         <div className='divAbility'>{pokemonFilter[0]?.abilities?.map((element, index) => {

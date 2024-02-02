@@ -6,6 +6,7 @@ import logo from "../../assets/img/image 1.svg"
 import darki from "../../assets/img/mode.svg"
 import back from "../../assets/img/back.svg"
 import close from "../../assets/img/close.svg"
+import BurgerMeneu from '../burgermeneu/BurgerMeneu'
 
 
 
@@ -36,25 +37,16 @@ toggleMode()
   return (
 
     <>
-
-          <body style={{ }}>
-                <button onClick={toggleMode}>{darki}</button>
-          </body>
         <Link to="/">
-            <img
+            <img className='logo'
               src={logo}
               alt="Pokemon-Logo"
-              style={{ width: "2rem"}}
+              style={{ width: "20rem"}}
             /> 
         </Link>
 
         <nav>
-          <Link to="#">
-              <img
-                src={back}
-                alt="Back-Icon"
-              /> 
-          </Link>
+         <BurgerMeneu/>
             
           <div className="search">
             <input

@@ -1,5 +1,24 @@
 .detailTop {
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+
+.detailCardDiv {
+    margin-top: 3rem;
+    background: linear-gradient(-45deg, #FFCB05, #FFE1C6);
+    border-radius: 20px;
+    height: 120px;
+    width: 300px;
+}
+
+.detailCardDiv img {
+    position: relative;
+    top: -80px;
 }
 
 h1 {
@@ -9,9 +28,11 @@ h1 {
 .imgDetail {
     height: 240px;
     width: 240px;
+
 }
 
-.divAbility, .divTypes {
+.divAbility,
+.divTypes {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -20,7 +41,8 @@ h1 {
     padding: 1rem;
 }
 
-.pAbility, .pTypes {
+.pAbility,
+.pTypes {
     box-shadow: inset 0 0 16px black;
     padding: 1rem 2rem;
     border-radius: 1rem;

@@ -1,0 +1,60 @@
+/* @font-face {
+    font-family: "Roboto-Light";
+    src: url(../../assets/font/Roboto-Light.ttf);
+}
+@font-face {
+    font-family: "Roboto-Black";
+    src: url(../../assets/font/Roboto-Black.ttf);
+} */
+
+#root {
+    margin: 0 auto;
+    padding: 1rem;
+    text-align: center;
+    background-color: var(--color-back-light);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* body {
+    font-family: "Roboto-Light";
+} */
+
+/* .divPokeCard {
+    width: 50px;
+    height: 150px;
+    background: linear-gradient(-45deg, #FFCB05, #FFE1C6);
+    border-radius: 1rem;
+} */
+
+.divPokeCard img {
+    /* position: relative;
+    top: -40px; */
+}
+
+/* .divPokeCard div {
+    max-width: fit-content;
+    display: flex;
+    justify-content: center;
+    justify-content: space-around;
+    padding: var(--padding-global);
+    background-color: #fff;
+} */
+
+/* .divPokeCardBottom {
+    position: relative;
+    top: -75px;
+    border-end-end-radius: 1rem;
+    border-end-start-radius: 1rem;
+    background-color: #fff;
+    font-family: "Roboto-Black";
+    text-transform: capitalize;
+} */
