@@ -49,7 +49,7 @@ console.log(darkMode);
 
   const [apiData, setApiData] = useState({
     offset: '0',
-    limit: '450',
+    limit: '1000',
     initData: false,
     spData: false,
     completedData: false,
