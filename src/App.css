@@ -1,0 +1,23 @@
+@font-face {
+    font-family: "Roboto-R";
+    src: url("./assets/font/Roboto/Roboto-Regular.ttf");
+  }
+  
+  @font-face {
+    font-family: "Roboto-B";
+    src: url("./assets/font/Roboto/Roboto-Bold.ttf");
+  
+  }
+  
+  
+  .dark {
+    background-color: var(--color-back-dark);
+    height: 100%;
+    width: 100%;
+  }
+  
+  .light {
+    background-color: var(--color-back-light);
+    height: 100%;
+    width: 100%;
+  }

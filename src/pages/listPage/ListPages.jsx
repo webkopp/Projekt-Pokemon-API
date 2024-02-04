@@ -7,7 +7,7 @@ import "./listPage.css"
 
 const ListPages = () => {
 
-    const { type, apiData, filter, setType, backUp} = useContext(mainContext)
+    const { type, apiData, filter, setType, backUp ,darkMode, setDarkMode } = useContext(mainContext)
 
     // backUp ? console.log(backUp) : null
 
@@ -34,7 +34,6 @@ const ListPages = () => {
     return (
         <>
             <Header />
-            <BurgerMeneu/>
 
             {
                 (apiData.completedData === true && type) ? <PokeList list={type} /> : <p>Loading ...</p>
